@@ -46,9 +46,6 @@ InitMusic.play()
 time.sleep(InitMusic.duration)
 
 os.remove('NewAudio.mp3')#remove temperory file
-         
-
-
 
 class App():
   gah.title("Ronaldo")
@@ -64,12 +61,9 @@ class App():
       t = threading.Thread(target=self._record)
       t.start()
 
-
   def stoprecording(self, event):
       self.isrecording = False        
-      
-
-      
+            
   def _record(self):
       while self.isrecording:
         data = ""
@@ -93,11 +87,9 @@ class App():
             Monitor.write('Please check your connection and restart Ronaldo')
             speak('Please check your connection and restart Ronaldo')         
                   
-
         if "how are you" in data:
             speak("I am fine")
             Monitor.write("I am fine")
-
      
         elif "what" and "time" in data:
             speak(asctime())
@@ -110,10 +102,6 @@ class App():
         elif "hello" in data:
             speak("Hello there.")
             Monitor.write("Hello there")
-
-        elif "madarchod" in data:
-            speak("Gaali mut they maaderchod")
-            Monitor.write("Gaali mat day madarchod")    
 
         elif "where is" in data:
             where = data.split('is',1)
@@ -247,36 +235,19 @@ class App():
         elif "pollution in" in data:
             Loc = data.split('in',1)
             AirLoc = Loc[1]
-            ##############
+            # Complete this
         
         else:
             speak('sorry, I have not been programmed to answer this yet.')
-
-        
-        
+     
         music = pyglet.media.load('audio.mp3', streaming=False)
         music.play()
 
         #prevent from killing
         time.sleep(music.duration)
-        os.remove('audio.mp3') #remove temperory file
-      
-
-              
+        os.remove('audio.mp3') #remove temperory file                    
  
 app = App(gah)
 gah.mainloop()
 if __name__ == "ronaldo":
     Ronaldo("Ronaldo").run()
-  ##############################################################################################################################
-
-
-
-
-##################################################################################################################################
-
-
-     # Record Audio
- 
-
-
